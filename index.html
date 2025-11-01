@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Learning Mentor - Your Personal Career Guide</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 AI Learning Mentor</h1>
+      <p>Your Personalized Career Guide & Interview Coach</p>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showSection('home', this)">🏠 Home</button>
+      <button class="nav-tab" onclick="showSection('roadmap', this)">🎯 Roadmap</button>
+      <button class="nav-tab" onclick="showSection('tutor', this)">🤖 AI Tutor</button>
+      <button class="nav-tab" onclick="showSection('interview', this)">🎥 Mock Interview</button>
+      <button class="nav-tab" onclick="window.location.href='company.html'">🏢 Company Interviews</button>
+      <button class="nav-tab" onclick="showSection('dashboard', this)">📊 Dashboard</button>
+      <button class="nav-tab" onclick="showSection('peer-groups', this)">👥 Peer Groups</button>
+    </div>
+
+    <!-- Home Section -->
+    <div id="home" class="content-section active">
+      <h2>Welcome to Your AI-Powered Learning Journey!</h2>
+      <div class="feature-grid">
+        <div class="feature-card" onclick="showSection('roadmap', document.querySelector('[onclick*=roadmap]'))">
+          <div class="feature-icon">🎯</div>
+          <h3>Personalized Roadmaps</h3>
+          <p>Get tailored learning paths for DSA, Web Dev, AI/ML, and more</p>
+        </div>
+        <div class="feature-card" onclick="showSection('tutor', document.querySelector('[onclick*=tutor]'))">
+          <div class="feature-icon">🤖</div>
+          <h3>AI Tutor</h3>
+          <p>Ask questions, get explanations adapted to your level</p>
+        </div>
+        <div class="feature-card" onclick="showSection('interview', document.querySelector('[onclick*=interview]'))">
+          <div class="feature-icon">🎥</div>
+          <h3>Mock Interviews</h3>
+          <p>Practice technical and HR interviews with AI feedback</p>
+        </div>
+        <div class="feature-card" onclick="window.location.href='company.html'">
+          <div class="feature-icon">🏢</div>
+          <h3>Company Interviews</h3>
+          <p>Explore company patterns, apply, and practice mock interviews</p>
+        </div>
+        <div class="feature-card" onclick="showSection('dashboard', document.querySelector('[onclick*=dashboard]'))">
+          <div class="feature-icon">📊</div>
+          <h3>Progress Tracking</h3>
+          <p>Monitor your growth and identify weak areas</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roadmap Section -->
+    <div id="roadmap" class="content-section">
+      <h2>🎯 Personalized Learning Roadmaps</h2>
+      <div class="roadmap-container">
+        <div class="roadmap-selector">
+          <label for="roadmapSelect">Choose your learning path:</label>
+          <select id="roadmapSelect" onchange="showRoadmap(this.value)">
+            <option value="dsa">Data Structures & Algorithms</option>
+            <option value="webdev">Full Stack Web Development</option>
+            <option value="aiml">AI/ML Engineering</option>
+            <option value="placement">Campus Placement Prep</option>
+          </select>
+        </div>
+
+        <!-- DSA Roadmap -->
+        <div id="dsa-roadmap" class="roadmap-path active">
+          <div class="roadmap-step" onclick="window.location.href='arrays.html'" style="cursor:pointer;">
+            <h4>Week 1-2: Arrays & Strings</h4>
+            <p>Master basic array operations, two-pointers, sliding window techniques</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="roadmap-step" onclick="window.location.href='linkedlists_stack.html'" style="cursor:pointer;">
+            <h4>Week 3-4: Linked Lists & Stacks</h4>
+            <p>Implement linked lists, understand stack operations and applications</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="roadmap-step" onclick="window.location.href='recursion_backtracking.html'" style="cursor:pointer;">
+            <h4>Week 5-6: Recursion & Backtracking</h4>
+            <p>Introduction to Recursion, Tail and Head Recursion, Recursive vs Iterative Approach</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div>
+          </div>
+          </div>
+          </div>  
+        
+
+
+
+
+      </div>
+    </div>
+
+    <!-- Tutor Section -->
+    <div id="tutor" class="content-section">
+      <h2>🤖 AI Tutor & Q&A Assistant</h2>
+      <div class="ai-tutor">
+        <div class="chat-container" id="chatContainer">
+          <div class="message ai-message">
+            <strong>AI Tutor:</strong> Hi! I'm your personal AI tutor. Ask me anything about programming, algorithms, or career guidance.
+          </div>
+        </div>
+        <div id="loadingIndicator" style="display:none; text-align:center; font-style:italic; color:gray;">
+          🤖 AI is typing...
+        </div>
+        <div class="input-group">
+          <input type="text" id="userQuestion" placeholder="Ask your question here..." onkeypress="handleEnter(event)">
+          <button class="btn btn-primary" onclick="askQuestion()">Ask AI</button>
+          <button class="btn btn-danger" onclick="clearChat()">🗑 Clear</button>
+        </div>
+        <div class="example-prompts">
+          <p><strong>Try asking:</strong></p>
+          <button onclick="setExample('Explain recursion in simple terms')">Explain recursion</button>
+          <button onclick="setExample('What is the difference between REST and GraphQL?')">REST vs GraphQL</button>
+          <button onclick="setExample('How do I prepare for coding interviews?')">Interview prep</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mock Interview Section -->
+    <div id="interview" class="content-section">
+      <h2>🎥 Mock Interview Simulator</h2>
+      <div class="interview-simulator">
+        <div style="text-align:center; margin-bottom:20px;">
+          <button class="btn btn-primary" onclick="startInterview()">Start Interview</button>
+        </div>
+        <div id="interviewSection" style="display:none;">
+          <div class="interview-question">
+            <h3 id="questionTitle">Question</h3>
+            <p id="questionText"></p>
+          </div>
+          <textarea id="answerArea" placeholder="Type your answer here..."></textarea>
+          <div style="text-align:center; margin-top:10px;">
+            <button class="btn btn-primary" onclick="submitAnswer()">Submit Answer</button>
+            <button class="btn btn-success" onclick="nextQuestion()">Next</button>
+          </div>
+          <div id="feedback" style="display:none;">
+            <h4>AI Feedback:</h4>
+            <p id="feedbackText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard" class="content-section">
+      <h2>📊 Performance Dashboard</h2>
+      <div class="charts">
+        <div>
+          <h3>Overall Progress</h3>
+          <canvas id="progressChart"></canvas>
+        </div>
+        <div>
+          <h3>Skill Distribution</h3>
+          <canvas id="skillsChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Peer Groups Section -->
+    <section id="peer-groups" class="content-section">
+      <h2>👥 Peer Learning Groups</h2>
+      <ul class="peer-list">
+        <li>
+          <div class="peer-avatar">DS</div>
+          <div class="peer-info">
+            <strong>DSA Masters Group</strong><br>
+            <small>24 members • Active daily</small>
+            <p class="join-message" id="msg-dsa"></p>
+          </div>
+          <button class="join-btn" onclick="joinGroup('DSA Masters Group','msg-dsa', this)">Join</button>
+        </li>
+        <li>
+          <div class="peer-avatar">WD</div>
+          <div class="peer-info">
+            <strong>Web Dev Enthusiasts</strong><br>
+            <small>30 members • Active weekly</small>
+            <p class="join-message" id="msg-wd"></p>
+          </div>
+          <button class="join-btn" onclick="joinGroup('Web Dev Enthusiasts','msg-wd', this)">Join</button>
+        </li>
+        <li>
+          <div class="peer-avatar">AI</div>
+          <div class="peer-info">
+            <strong>AI & ML Learners</strong><br>
+            <small>18 members • Daily discussions</small>
+            <p class="join-message" id="msg-ai"></p>
+          </div>
+          <button class="join-btn" onclick="joinGroup('AI & ML Learners','msg-ai', this)">Join</button>
+        </li>
+        <li>
+          <div class="peer-avatar">SD</div>
+          <div class="peer-info">
+            <strong>System Design Geeks</strong><br>
+            <small>15 members • Weekly deep-dives</small>
+            <p class="join-message" id="msg-sd"></p>
+          </div>
+          <button class="join-btn" onclick="joinGroup('System Design Geeks','msg-sd', this)">Join</button>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <script src="index.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

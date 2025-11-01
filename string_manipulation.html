@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Manipulation</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    body { background: #f5fff5; font-family: Arial, sans-serif; }
+    .content { padding: 20px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔹 String Manipulation</h1>
+      <p>Working with substrings, patterns, and modifications.</p>
+    </div>
+
+    <div class="content">
+      <h2>Why Important?</h2>
+      <p>
+        String manipulation is essential in solving coding challenges, 
+        handling user input, and processing text data.
+      </p>
+
+      <h2>Common Operations</h2>
+      <ul>
+        <li>Reversing a string.</li>
+        <li>Checking for palindrome.</li>
+        <li>Pattern matching.</li>
+        <li>Substring extraction.</li>
+        <li>Character frequency counting.</li>
+      </ul>
+
+      <h2>Example: Palindrome Check</h2>
+      <pre>
+string s = "madam";
+int i = 0, j = s.length()-1;
+bool isPal = true;
+
+while(i < j) {
+    if(s[i] != s[j]) {
+        isPal = false;
+        break;
+    }
+    i++; j--;
+}
+
+cout << (isPal ? "Palindrome" : "Not Palindrome");
+      </pre>
+
+      <h2>Applications</h2>
+      <p>
+        - Data validation in forms <br>
+        - Searching text in files <br>
+        - Competitive programming problems <br>
+        - DNA/sequence matching in bioinformatics
+      </p>
+    </div>
+
+    <div style="margin:20px;">
+      <button class="btn btn-primary" onclick="goBack()">⬅ Back to Module</button>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      localStorage.setItem("c4", "done");
+    }
+    function goBack() { window.location.href = "arrays.html"; }
+  </script>
+</body>
+</html>

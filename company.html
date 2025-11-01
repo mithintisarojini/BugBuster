@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Company Interviews</title>
+  <link rel="stylesheet" href="company.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🏢 Company Interviews</h1>
+      <p>Explore interview rounds, apply for openings, and practice mock interviews.</p>
+    </div>
+
+    <!-- Company Patterns -->
+    <div class="company-section">
+      <h2>Interview Patterns by Company</h2>
+      <select id="companySelect" onchange="showCompanyPattern(this.value)">
+        <option value="google">Google</option>
+        <option value="amazon">Amazon</option>
+        <option value="microsoft">Microsoft</option>
+        <option value="infosys">Infosys</option>
+        <option value="tcs">TCS</option>
+      </select>
+      <div id="companyPattern" class="pattern-box"></div>
+      <button id="applyBtn" class="apply-btn" onclick="startInterview()">Apply Now</button>
+    </div>
+
+    <!-- Mock Interview -->
+    <div id="mockSection" class="mock-section hidden">
+      <h2>🎥 Company Mock Interview</h2>
+      <p>Answer 10 questions and test your preparation!</p>
+      <form id="mockForm">
+        <div id="questionsContainer"></div>
+      </form>
+      <div id="mockResult" class="result-box" style="display:none;"></div>
+    </div>
+  </div>
+ 
+
+
+
+  <script src="company.js"></script>
+</body>
+</html>

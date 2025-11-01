@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tail and Head Recursion</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .content { padding: 20px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔹 Tail and Head Recursion</h1>
+      <p>Learn the difference between tail recursion and head recursion.</p>
+    </div>
+
+    <div class="content">
+      <h2>Tail Recursion</h2>
+      <p>In tail recursion, the recursive call is the last operation in the function. The compiler can optimize it to avoid extra stack usage.</p>
+      <pre>
+function tailFactorial(n, result = 1) {
+    if (n === 0) return result;
+    return tailFactorial(n - 1, n * result);
+}
+console.log(tailFactorial(5)); // Output: 120
+      </pre>
+
+      <h2>Head Recursion</h2>
+      <p>In head recursion, the recursive call happens before any other operation in the function.</p>
+      <pre>
+function headFactorial(n) {
+    if (n === 0) return 1;
+    let res = headFactorial(n - 1);
+    return n * res;
+}
+console.log(headFactorial(5)); // Output: 120
+      </pre>
+
+      <h2>Key Points</h2>
+      <ul>
+        <li>Tail recursion can be optimized by the compiler to iterative form.</li>
+        <li>Head recursion may use more stack space due to pending operations.</li>
+        <li>Understanding the difference helps in writing efficient recursive functions.</li>
+      </ul>
+    </div>
+
+    <div style="margin:20px;">
+      <button class="btn btn-primary" onclick="goBack()">⬅ Back to Module</button>
+    </div>
+  </div>
+
+  <script>
+    // Mark this concept as completed
+    window.onload = function() { localStorage.setItem("r2", "done"); }
+    function goBack() { window.location.href = "recursion_backtracking.html"; }
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursive vs Iterative Approach</title>
+  <style>
+    .container { width: 80%; margin: auto; padding: 20px; font-family: Arial, sans-serif; }
+    .content { line-height: 1.6; background: #fff; padding: 20px; border-radius: 8px; }
+    .btn { margin-top: 20px; padding: 10px 20px; border: none; background: #007bff; color: white; border-radius: 5px; cursor: pointer; }
+    .btn:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔹 Recursive vs Iterative Approach</h1>
+    <div class="content">
+      <p>Some problems can be solved using either recursion or iteration.</p>
+
+      <h2>Recursive Approach:</h2>
+      <ul>
+        <li>Code is usually simpler and easier to understand.</li>
+        <li>May consume more memory due to call stack.</li>
+      </ul>
+
+      <h2>Iterative Approach:</h2>
+      <ul>
+        <li>Uses loops instead of function calls.</li>
+        <li>More memory-efficient and avoids stack overflow.</li>
+      </ul>
+
+      <h2>Example (Factorial in Iterative Way):</h2>
+      <pre>
+int factorial(int n) {
+    int result = 1;
+    for(int i=1; i<=n; i++) result *= i;
+    return result;
+}
+      </pre>
+    </div>
+
+    <button class="btn" onclick="goBack()">⬅ Back to Module</button>
+  </div>
+
+  <script>
+    window.onload = () => { localStorage.setItem("r3", "done"); }
+    function goBack() { window.location.href = "recursion_backtracking.html"; }
+  </script>
+</body>
+</html>

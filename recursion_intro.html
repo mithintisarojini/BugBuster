@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Recursion</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .content { padding: 20px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔹 Introduction to Recursion</h1>
+      <p>Learn the fundamentals of recursion in programming.</p>
+    </div>
+
+    <div class="content">
+      <h2>What is Recursion?</h2>
+      <p>Recursion is a programming technique where a function calls itself directly or indirectly to solve a problem. Every recursive function requires a base case to terminate.</p>
+
+      <h2>Why Use Recursion?</h2>
+      <ul>
+        <li>Simplifies code for problems like factorial, Fibonacci, and tree traversals.</li>
+        <li>Useful in divide-and-conquer algorithms.</li>
+        <li>Helps in exploring all possibilities in backtracking problems.</li>
+      </ul>
+
+      <h2>Example: Factorial Function (JavaScript)</h2>
+      <pre>
+function factorial(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // Output: 120
+      </pre>
+
+      <h2>Key Points</h2>
+      <ul>
+        <li>Every recursive function needs a base case to avoid infinite recursion.</li>
+        <li>Recursive functions can often be converted into iterative ones.</li>
+        <li>Understand the call stack to debug recursion effectively.</li>
+      </ul>
+    </div>
+
+    <div style="margin:20px;">
+      <button class="btn btn-primary" onclick="goBack()">⬅ Back to Module</button>
+    </div>
+  </div>
+
+  <script>
+    // Mark this concept as completed
+    window.onload = function() { localStorage.setItem("r1", "done"); }
+    function goBack() { window.location.href = "recursion_backtracking.html"; }
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linked Lists & Stacks Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f9ff; }
+    .container { width: 80%; margin: auto; padding: 20px; }
+    .header { text-align: center; margin-bottom: 20px; }
+    .question { margin-bottom: 15px; background: #ffffff; padding: 15px; border-radius: 8px; }
+    .btn { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; display: inline-block; text-decoration: none; text-align: center; }
+    .btn:hover { background: #0056b3; }
+    .result { font-weight: bold; margin-top: 15px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Linked Lists & Stacks Quiz</h1>
+      <p>Answer all 10 questions below:</p>
+    </div>
+
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What is the time complexity of inserting at the head of a singly linked list?</p>
+        <input type="radio" name="q1" value="A"> O(1)<br>
+        <input type="radio" name="q1" value="B"> O(n)<br>
+        <input type="radio" name="q1" value="C"> O(log n)<br>
+      </div>
+
+      <div class="question">
+        <p>2. Which data structure follows LIFO order?</p>
+        <input type="radio" name="q2" value="A"> Queue<br>
+        <input type="radio" name="q2" value="B"> Stack<br>
+        <input type="radio" name="q2" value="C"> Linked List<br>
+      </div>
+
+      <div class="question">
+        <p>3. What is the time complexity to search an element in a singly linked list?</p>
+        <input type="radio" name="q3" value="A"> O(1)<br>
+        <input type="radio" name="q3" value="B"> O(n)<br>
+        <input type="radio" name="q3" value="C"> O(log n)<br>
+      </div>
+
+      <div class="question">
+        <p>4. Which operation is NOT directly supported by a stack?</p>
+        <input type="radio" name="q4" value="A"> Push<br>
+        <input type="radio" name="q4" value="B"> Pop<br>
+        <input type="radio" name="q4" value="C"> Random Access<br>
+      </div>
+
+      <div class="question">
+        <p>5. In a doubly linked list, each node contains:</p>
+        <input type="radio" name="q5" value="A"> Data only<br>
+        <input type="radio" name="q5" value="B"> Data + Next pointer<br>
+        <input type="radio" name="q5" value="C"> Data + Next + Prev pointers<br>
+      </div>
+
+      <div class="question">
+        <p>6. Which of the following is an application of stacks?</p>
+        <input type="radio" name="q6" value="A"> Undo in text editors<br>
+        <input type="radio" name="q6" value="B"> Priority queue<br>
+        <input type="radio" name="q6" value="C"> Graph BFS<br>
+      </div>
+
+      <div class="question">
+        <p>7. How do you delete the last node in a singly linked list?</p>
+        <input type="radio" name="q7" value="A"> Change head pointer<br>
+        <input type="radio" name="q7" value="B"> Traverse to second last node and update its next to null<br>
+        <input type="radio" name="q7" value="C"> Use pop operation<br>
+      </div>
+
+      <div class="question">
+        <p>8. What is the time complexity of accessing the middle element in a singly linked list?</p>
+        <input type="radio" name="q8" value="A"> O(1)<br>
+        <input type="radio" name="q8" value="B"> O(n)<br>
+        <input type="radio" name="q8" value="C"> O(log n)<br>
+      </div>
+
+      <div class="question">
+        <p>9. Which stack implementation is more memory efficient?</p>
+        <input type="radio" name="q9" value="A"> Array-based stack<br>
+        <input type="radio" name="q9" value="B"> Linked list stack<br>
+        <input type="radio" name="q9" value="C"> Both same<br>
+      </div>
+
+      <div class="question">
+        <p>10. Which operation can be performed in O(1) time on a stack?</p>
+        <input type="radio" name="q10" value="A"> Push<br>
+        <input type="radio" name="q10" value="B"> Pop<br>
+        <input type="radio" name="q10" value="C"> All of the above<br>
+      </div>
+
+      <button type="button" class="btn" onclick="checkAnswers()">Submit Quiz</button>
+      <a href="index.html" class="btn">⬅ Back to Module</a>
+    </form>
+
+    <p class="result" id="result"></p>
+  </div>
+
+  <script>
+    const answers = {
+      q1: "A", q2: "B", q3: "B", q4: "C", q5: "C", 
+      q6: "A", q7: "B", q8: "B", q9: "A", q10: "C"
+    };
+
+    function checkAnswers() {
+      let score = 0;
+      for (let q in answers) {
+        let selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) score++;
+      }
+      document.getElementById("result").innerText = `🎉 You scored ${score} / 10`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Segoe UI', sans-serif;
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  min-height:100vh;
+  color:#333;
+}
+.container { max-width:1200px; margin:auto; padding:20px; }
+.header { text-align:center; margin-bottom:30px; color:white; }
+.header h1 { font-size:2.5em; margin-bottom:10px; text-shadow:2px 2px 4px rgba(0,0,0,0.3);}
+.nav-tabs { display:flex; background:rgba(255,255,255,0.1); border-radius:15px; padding:5px; margin-bottom:30px;}
+.nav-tab { flex:1; padding:15px; background:transparent; color:white; cursor:pointer; border:none; border-radius:10px; transition:.3s; }
+.nav-tab.active { background:rgba(255,255,255,0.2); }
+.content-section { display:none; background:white; border-radius:20px; padding:30px; }
+.content-section.active { display:block; }
+.feature-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
+.feature-card { background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:15px; padding:20px; text-align:center; color:white; cursor:pointer; }
+.roadmap-step { background:linear-gradient(135deg,#84fab0,#8fd3f4); margin:10px 0; padding:15px; border-radius:15px;}
+.ai-tutor, .interview-simulator { background:#fafafa; padding:20px; border-radius:20px; margin-top:20px; }
+.chat-container { height:300px; border:1px solid #ddd; border-radius:15px; padding:10px; overflow-y:auto; background:white; }
+.message { margin:10px 0; padding:10px; border-radius:20px; }
+.user-message { background:#667eea; color:white; margin-left:auto; max-width:70%; }
+.ai-message { background:#f1f3f4; color:#333; margin-right:auto; max-width:70%; }
+.btn { padding:10px 20px; border:none; border-radius:25px; cursor:pointer; font-weight:bold; }
+.btn-primary { background:linear-gradient(135deg,#667eea,#764ba2); color:white; }
+.btn-success { background:linear-gradient(135deg,#84fab0,#8fd3f4); color:#333; }
+.dashboard-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.dashboard-card { background:white; border-radius:15px; padding:20px; box-shadow:0 5px 10px rgba(0,0,0,0.1);}
+.peer-card { background:white; border-radius:15px; padding:15px; display:flex; align-items:center; gap:10px; margin:10px 0;}
+.avatar { width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg,#667eea,#764ba2); display:flex; align-items:center; justify-content:center; color:white;}     
+.peer-list {
+  list-style: none;
+  padding: 0;
+}
+.peer-list li {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.peer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.charts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chart-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 300px;       /* 🔹 control width */
+  height: 300px;      /* 🔹 control height */
+}
+
+.chart-box canvas {
+  max-width: 100%;
+  max-height: 220px;  /* 🔹 keep chart inside box */
+}
+.peer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.peer-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.peer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4a90e2;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.join-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.join-btn:hover {
+  background: #45a049;
+}
+.join-message {
+  color: green;
+  font-size: 13px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+.example-prompts {
+  margin-top: 15px;
+}
+.example-prompts button {
+  margin: 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #eee;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.example-prompts button:hover {
+  background: #d1ecf1;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stack Operations & Applications</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .content { padding: 20px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔹 Stack Operations & Applications</h1>
+      <p>Learn about stack implementation and its practical uses.</p>
+    </div>
+
+    <div class="content">
+      <h2>What is a Stack?</h2>
+      <p>A stack is a linear data structure that follows LIFO (Last In First Out) principle.</p>
+
+      <h2>Operations</h2>
+      <ul>
+        <li>Push – Add element to the top</li>
+        <li>Pop – Remove element from the top</li>
+        <li>Peek/Top – View top element</li>
+        <li>IsEmpty – Check if stack is empty</li>
+      </ul>
+
+      <h2>Applications</h2>
+      <ul>
+        <li>Expression evaluation (infix, postfix)</li>
+        <li>Undo/Redo operations</li>
+        <li>Function call stack</li>
+        <li>Browser history</li>
+      </ul>
+
+      <h2>Example in C++</h2>
+      <pre>
+stack<int> s;
+s.push(10);
+s.push(20);
+s.pop();
+cout << s.top();
+      </pre>
+    </div>
+
+    <div style="margin:20px;">
+      <button class="btn btn-primary" onclick="goBack()">⬅ Back to Module</button>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() { localStorage.setItem("l2", "done"); }
+    function goBack() { window.location.href = "linkedlists_stack.html"; }
+  </script>
+</body>
+</html>

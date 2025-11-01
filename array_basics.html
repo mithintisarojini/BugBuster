@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Basics</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .content {
+      padding: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔹 Array Basics</h1>
+      <p>Understanding arrays and their fundamental operations.</p>
+    </div>
+
+    <div class="content">
+      <h2>What is an Array?</h2>
+      <p>An array is a collection of elements stored in contiguous memory locations. Each element can be accessed directly using its index. Arrays are one of the most fundamental data structures in computer science.</p>
+
+      <h2>Operations on Arrays</h2>
+      <ul>
+        <li><b>Traversal:</b> Visiting each element in the array (e.g., printing all values).</li>
+        <li><b>Insertion:</b> Adding a new element at a specific index (may require shifting elements).</li>
+        <li><b>Deletion:</b> Removing an element and shifting the others to fill the gap.</li>
+        <li><b>Searching:</b> Finding whether a value exists (Linear Search, Binary Search).</li>
+      </ul>
+
+      <h2>Example in C++</h2>
+      <pre>
+int arr[5] = {10, 20, 30, 40, 50};
+for(int i=0; i<5; i++) {
+    cout << arr[i] << " ";
+}
+      </pre>
+
+      <h2>Time Complexity</h2>
+      <ul>
+        <li>Traversal → O(n)</li>
+        <li>Insertion/Deletion at end → O(1)</li>
+        <li>Insertion/Deletion at beginning → O(n)</li>
+        <li>Searching → O(n) (Linear), O(log n) (Binary Search on sorted arrays)</li>
+      </ul>
+    </div>
+
+    <div style="margin:20px;">
+      <button class="btn btn-primary" onclick="goBack()">⬅ Back to Module</button>
+    </div>
+  </div>
+
+  <script>
+    // Mark this concept as completed
+    window.onload = function() {
+      localStorage.setItem("c1", "done");
+    }
+
+    function goBack() {
+      window.location.href = "arrays.html";
+    }
+  </script>
+</body>
+</html>

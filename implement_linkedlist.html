@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implement Linked List</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .content { padding: 20px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔹 Implement Linked List</h1>
+      <p>Learn how to create and manipulate linked lists in code.</p>
+    </div>
+
+    <div class="content">
+      <h2>What is a Linked List?</h2>
+      <p>A linked list is a linear data structure where elements are stored in nodes, and each node points to the next node. It allows dynamic memory allocation and efficient insertions/deletions.</p>
+
+      <h2>Types of Linked Lists</h2>
+      <ul>
+        <li>Singly Linked List</li>
+        <li>Doubly Linked List</li>
+        <li>Circular Linked List</li>
+      </ul>
+
+      <h2>Example in C++</h2>
+      <pre>
+struct Node {
+    int data;
+    Node* next;
+};
+
+Node* head = nullptr; // start of the list
+      </pre>
+
+      <h2>Operations</h2>
+      <ul>
+        <li>Traversal</li>
+        <li>Insertion</li>
+        <li>Deletion</li>
+        <li>Search</li>
+      </ul>
+    </div>
+
+    <div style="margin:20px;">
+      <button class="btn btn-primary" onclick="goBack()">⬅ Back to Module</button>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() { localStorage.setItem("l1", "done"); }
+    function goBack() { window.location.href = "linkedlists_stack.html"; }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays & Strings Module</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; }
+    .container { width: 80%; margin: auto; padding: 20px; }
+    .header { text-align: center; margin-bottom: 20px; }
+    .concepts { background: #fff; padding: 20px; border-radius: 8px; }
+    .concepts label { display: block; margin: 10px 0; font-size: 18px; }
+    .concepts a { text-decoration: none; color: #007bff; margin-left: 10px; }
+    .concepts a:hover { text-decoration: underline; }
+    .btn { 
+      background: #007bff; 
+      color: white; 
+      padding: 10px 20px; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      margin-top: 20px; 
+      display: none; /* hidden until all concepts complete */
+    }
+    .btn:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Arrays & Strings - Key Concepts</h1>
+      <p>Click each concept, read fully. Once all are completed, quiz will unlock.</p>
+    </div>
+
+    <!-- ✅ Key Concepts with Links -->
+    <div class="concepts">
+      <label>
+        <input type="radio" disabled id="c1"> Array Basics
+        <a href="array_basics.html" target="_blank" onclick="markDone('c1')">[Open]</a>
+      </label>
+
+      <label>
+        <input type="radio" disabled id="c2"> Two Pointer Technique
+        <a href="two_pointer.html" target="_blank" onclick="markDone('c2')">[Open]</a>
+      </label>
+
+      <label>
+        <input type="radio" disabled id="c3"> Sliding Window
+        <a href="sliding_window.html" target="_blank" onclick="markDone('c3')">[Open]</a>
+      </label>
+
+      <label>
+        <input type="radio" disabled id="c4"> String Manipulation
+        <a href="string_manipulation.html" target="_blank" onclick="markDone('c4')">[Open]</a>
+      </label>
+    </div>
+
+    <!-- ✅ Go to Quiz Button -->
+    <button class="btn" id="quizBtn" onclick="goToQuiz()">Go to Quiz ➡</button>
+  </div>
+
+  <script>
+    // Mark a concept as completed
+    function markDone(id) {
+      localStorage.setItem(id, "done");
+      document.getElementById(id).checked = true;
+      checkCompletion();
+    }
+
+    // Check if all are completed
+    function checkCompletion() {
+      if (localStorage.getItem("c1") === "done" &&
+          localStorage.getItem("c2") === "done" &&
+          localStorage.getItem("c3") === "done" &&
+          localStorage.getItem("c4") === "done") {
+        document.getElementById("quizBtn").style.display = "inline-block";
+      }
+    }
+
+    // Redirect to quiz page
+    function goToQuiz() {
+      window.location.href = "arrays_quiz.html";
+    }
+
+    // On page load, restore state
+    window.onload = () => {
+      ["c1","c2","c3","c4"].forEach(c => {
+        if (localStorage.getItem(c) === "done") {
+          document.getElementById(c).checked = true;
+        }
+      });
+      checkCompletion();
+    }
+  </script>
+</body>
+</html>
